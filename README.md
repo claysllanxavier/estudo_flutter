@@ -23,9 +23,13 @@ Além disso, espero que o código desses exemplos ajude aqueles que também est�
 
 ## Autores
 
-ex. [Claysllan Xavier](https://github.com/claysllanxavier)
+* [Claysllan Xavier](https://github.com/claysllanxavier)
 
-# Projetos
+## Projetos
+
+* [Contador de Pessoas](contador_pessoas/README.md)
+* [Cálculo do IMC](imc/README.md)
+* [Conversor de Moédas](currency/README.md)
 
 ## Licença
 
