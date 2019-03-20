@@ -1,62 +1,32 @@
-# Project Title
+# Estudos Flutter
 
-Simple overview of use/purpose.
+Este repositório destina-se a armazenar aplicativos feitos com o Flutter enquanto estou estudando essas coisas.
 
-## Description
+## Descrição
 
-An in-depth paragraph about your project and overview of use.
+O respositório conta com alguns que desenvolvi fazendo o [curso do Daniel na Udemy]('https://www.udemy.com/curso-completo-flutter-app-android-ios/') e alguns projetos pessoais.
+
+Além disso, espero que o código desses exemplos ajude aqueles que também estão começando com Flutter.
 
 ## Getting Started
 
-### Dependencies
+### Dependências
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Flutter
+* Android Studio
 
-### Installing
+### Instalação
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Clone o respositório
+* Abre algum dos projetos no android studio
+* Execute o projeto no emulador em  um celular
 
-### Executing program
+## Autores
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+ex. [Claysllan Xavier](https://github.com/claysllanxavier)
 
-## Help
+# Projetos
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+## Licença
 
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
