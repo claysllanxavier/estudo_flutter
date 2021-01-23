@@ -2,44 +2,44 @@ import 'package:bytebank/models/Contact.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-Future<Database> createDatabase() {
-  return getDatabasesPath().then((dbPath) {
-    final String path = join(dbPath, 'bytebank.db');
+Future<Database> getDatabase() async {
+  final String dbPath = await getDatabasesPath();
 
-    return openDatabase(path, onCreate: (db, version) {
-      db.execute('CREATE TABLE contacts('
-          'id INTEGER PRIMARY KEY, '
-          'name TEXT, '
-          'account_number INTEGER)');
-    }, version: 1);
-  });
+  final String path = join(dbPath, 'bytebank.db');
+
+  return openDatabase(path, onCreate: (db, version) {
+    db.execute('CREATE TABLE contacts('
+        'id INTEGER PRIMARY KEY, '
+        'name TEXT, '
+        'account_number INTEGER)');
+  }, version: 1);
 }
 
-Future<int> save(Contact contact) {
-  return createDatabase().then((db) {
-    final Map<String, dynamic> contactMap = Map();
-    contactMap['name'] = contact.name;
-    contactMap['account_number'] = contact.accountNumber;
-    return db.insert('contacts', contactMap);
-  });
+Future<int> save(Contact contact) async {
+  final Database db = await getDatabase();
+
+  final Map<String, dynamic> contactMap = Map();
+  contactMap['name'] = contact.name;
+  contactMap['account_number'] = contact.accountNumber;
+  return db.insert('contacts', contactMap);
 }
 
-Future<List<Contact>> findAll() {
-  return createDatabase().then((db) {
-    return db.query('contacts').then((maps) {
-      final List<Contact> contacts = List();
+Future<List<Contact>> findAll() async {
+  final Database db = await getDatabase();
 
-      for (Map<String, dynamic> map in maps) {
-        final Contact contact = Contact(
-          map['id'],
-          map['name'],
-          map['account_number'],
-        );
+  final List<Map<String, dynamic>> result = await db.query('contacts');
 
-        contacts.add(contact);
-      }
+  final List<Contact> contacts = List();
 
-      return contacts;
-    });
-  });
+  for (Map<String, dynamic> map in result) {
+    final Contact contact = Contact(
+      map['id'],
+      map['name'],
+      map['account_number'],
+    );
+
+    contacts.add(contact);
+  }
+
+  return contacts;
 }
