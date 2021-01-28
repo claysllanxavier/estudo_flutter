@@ -1,3 +1,4 @@
+import 'package:bytebank/components/response_dialog.dart';
 import 'package:bytebank/components/transiction_auth_dialog.dart';
 import 'package:bytebank/http/webclients/transaction_webclient.dart';
 import 'package:bytebank/models/Contact.dart';
@@ -91,11 +92,27 @@ class _TransactionFormState extends State<TransactionForm> {
     Transaction transactionCreated,
     String password,
     BuildContext context,
-  ) {
-    _webClient.save(transactionCreated, password).then((transactionRecived) {
-      if (transactionRecived != null) {
-        Navigator.pop(context);
-      }
-    });
+  ) async {
+    final Transaction transactionRecived =
+        await _webClient.save(transactionCreated, password).catchError(
+      (e) {
+        showDialog(
+            context: context,
+            builder: (contextDialog) {
+              return FailureDialog(e.message);
+            });
+      },
+      test: (e) => e is Exception,
+    );
+
+    if (transactionRecived != null) {
+      await showDialog(
+          context: context,
+          builder: (contextDialog) {
+            return SuccessDialog('successful transaction');
+          });
+
+      Navigator.pop(context);
+    }
   }
 }
