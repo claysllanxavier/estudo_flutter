@@ -8,12 +8,12 @@
 > Dev Quiz is a simple Quiz app with Flutter built in the last Rocketseat Next Level week
 
 <p align="center">
-  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/tree/master/devquiz/.github/screen01.png" width="415" border="0">
-  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/tree/master/devquiz/.github/screen02.png" width="415" border="0">
+  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/blob/master/devquiz/.github/screen01.png" width="415" border="0">
+  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/blob/master/devquiz/.github/screen02.png" width="415" border="0">
 </p>
 <p align="center">
-  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/tree/master/devquiz/.github/screen03.png" width="415" border="0">
-  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/tree/master/devquiz/.github/screen04.png" width="415" border="0">
+  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/blob/master/devquiz/.github/screen03.png" width="415" border="0">
+  <img align="center" src="https://github.com/claysllanxavier/estudo_flutter/blob/master/devquiz/.github/screen04.png" width="415" border="0">
 </p>
 
 # :postbox: Get in touch to me
