@@ -1,21 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/home/home_page.dart';
-import 'package:payflow/modules/login/login_page.dart';
-import 'package:payflow/modules/splash/splash_page.dart';
-import 'package:payflow/shared/themes/app_colors.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'app_widget.dart';
 
 void main() {
-  runApp(AppWidget());
+  runApp(AppFirebase());
 }
 
-class AppWidget extends StatelessWidget {
-  // This widget is the root of your application.
+class AppFirebase extends StatefulWidget {
+  const AppFirebase({Key? key}) : super(key: key);
+
+  @override
+  _AppFirebaseState createState() => _AppFirebaseState();
+}
+
+class _AppFirebaseState extends State<AppFirebase> {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'PayFlow',
-      theme: ThemeData(primaryColor: AppColors.primary),
-      home: HomePage(),
+    return FutureBuilder(
+      future: _initialization,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Material(
+            child: Center(
+              child: Text(
+                'Opa, erro Inesperado! :/',
+                textDirection: TextDirection.ltr,
+              ),
+            ),
+          );
+        }
+        if (snapshot.connectionState == ConnectionState.done) {
+          return AppWidget();
+        }
+        return Material(
+          child: Center(child: CircularProgressIndicator()),
+        );
+      },
     );
   }
 }
